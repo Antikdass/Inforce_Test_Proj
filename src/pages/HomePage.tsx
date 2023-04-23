@@ -60,7 +60,6 @@ const HomePage = () => {
 
   const onSubmit = async (values: FormValuesModel) => {
     if (Object.keys(selectedProduct).length) {
-      console.log(values.id);
       const productId = values.id;
       dispatch(productsActions.updateProduct(productId as number, values));
     } else {
@@ -76,8 +75,6 @@ const HomePage = () => {
   useEffect(() => {
     dispatch(productsActions.getProducts());
   }, []);
-
-  console.log(selectedProduct);
 
   return (
     <>

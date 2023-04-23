@@ -72,7 +72,6 @@ export const products = {
     const response = productsFromStore.find((item: any) => productId === item.id);
     const newComment = { id: response.comments.length, productId: productId, description: comment, date: new Date() };
     response.comments.push(newComment);
-    console.log(response);
   },
   deleteComment: (commentId: number, productId: number) => async (dispatch: any, getState: any) => {
     const { products: productsFromStore } = getState().products;
